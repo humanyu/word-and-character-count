@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 50px 100px;
+      }
+      .heading {
+        text-align: center;
+      }
+      .containor {
+        text-align: center;
+        background-color: #1abc;
+        padding: 50px;
+      }
+      .commonDiv {
+        display: inline-block;
+      }
+      .inputclass {
+        padding: 5px 10px;
+        margin: 10px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">Temprarure Convertor</h1>
+    <div class="containor">
+      <div class="commonDiv">
+        <label for="">Celsius</label>
+        <div><input id="cel" type="number" value="0" class="inputclass" /></div>
+      </div>
+      <div class="commonDiv">
+        <label for="">Fahrenheit</label>
+        <div>
+          <input id="far" type="number" value="32" class="inputclass" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let cel = document.getElementById("cel");
+      let far = document.getElementById("far");
+      cel.addEventListener("input", function () {
+        far.value = ((this.value * 9) / 5 + 32).toFixed(4);
+      });
+      far.addEventListener("input", function () {
+        cel.value = (((this.value - 32) * 5) / 9).toFixed(4);
+      });
+    </script>
+  </body>
+</html>
